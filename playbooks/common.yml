@@ -10,6 +10,10 @@
         name: wireshark
         state: latest
 
+    - name: install httpd
+      ansible.builtin.package:
+        name: httpd
+        state: latest
 
 - name: update LB  and DB server
   hosts: lb, db
@@ -26,3 +30,7 @@
         name: wireshark
         state: latest
         
+    - name: install apache2
+      ansible.builtin.package:
+        name: apache2
+        state: latest    
