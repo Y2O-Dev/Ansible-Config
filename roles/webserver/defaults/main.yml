@@ -7,12 +7,12 @@
   tasks:
     - name: install httpd  
       ansible.builtin.yum:
-        name: "httpd"
+        name: httpd
         state: latest
 
     - name: install git
       ansible.builtin.yum:
-        name: "git"
+        name: git
         state: present
 
     - name: clone a repo
