@@ -15,9 +15,6 @@
         name: httpd
         state: latest
 
-    - name: enable httpd
-      service: name=httpd state=started 
-
 - name: update LB  and DB server
   hosts: lb, db
   remote_user: ubuntu
@@ -32,11 +29,8 @@
       apt:
         name: wireshark
         state: latest
-
+        
     - name: install apache2
       ansible.builtin.package:
         name: apache2
-        state: latest    
-    
-    - name: enable httpd
-      service: name=apache2 state=started 
+        state: latest
