@@ -10,8 +10,8 @@
 {% if vhost.documentroot is defined %}
   DocumentRoot "{{ vhost.documentroot }}"
   <Proxy "balancer://myapp1">
-    BalancerMember http://172.31.83.5:80 loadfactor=5 timeout=1
-    BalancerMember http://172.31.86.8:80 loadfactor=5 timeout=1
+    BalancerMember http://172.31.16.56:80 loadfactor=5 timeout=1
+    BalancerMember http://172.31.28.254:80 loadfactor=5 timeout=1
     ProxySet lbmethod=bytraffic
   </Proxy>
   ProxyPreserveHost On

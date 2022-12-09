@@ -14,7 +14,7 @@
 - name: clone tooling repository
   become: true
   ansible.builtin.git:
-    repo: https://github.com/Babbexx-22/tooling_.git.
+    repo: https://github.com/Y2O-Dev/tooling.git
     dest: /var/www/tooling
     force: yes
 
