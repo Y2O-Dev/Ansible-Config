@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-    ANSIBLE_CONFIG="${WORKSPACE}/deploy/ansible.cfg"
+    ANSIBLE-CONFIG="${WORKSPACE}/deploy/ansible.cfg"
   }
 
   // parameters {
@@ -32,7 +32,7 @@ pipeline {
     }
 
     stage ("Run ansible playbook") {
-      steps{
+      steps {
         ansiblePlaybook become: true, colorized: true, credentialsId: 'jenkins_ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/dev', playbook: 'playbooks/site.yml'
       }
     }
@@ -41,7 +41,7 @@ pipeline {
        cleanWs() 
       }
     }
-    }
+  }
 }
 
  
