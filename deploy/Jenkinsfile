@@ -1,42 +1,33 @@
 pipeline {
     agent any
 
+    environment {
+    ANSIBLE_CONFIG="${WORKSPACE}/deploy/ansible.cfg"
+  }
+
+  // parameters {
+  //     string(name: 'inventory', defaultValue: 'dev',  description: 'This is the inventory file for the environment to deploy configuration')
+  //   }
+
   stages {
-    stage("Initial Workspace Clean-up") {
+    stage ("Initial Workspace Clean-up") {
       steps {
         dir("${WORKSPACE}") {
           deleteDir()
         }
       }
     }
-    
-    stage('Build') {
+  
+    stage("SCM checkout") {
       steps {
-        script {
-          sh 'echo "Building Stage"'
-        }
+        git branch: 'main', url: 'https://github.com/Y2O-Dev/Ansible-Config.git'
       }
     }
 
-    stage('Test') {
+    stage ('Update roles_path using sed') {
       steps {
-        script {
-          sh 'echo "Testing Stage"'
-        }
-      }
-    }
-    stage("Package") {
-      steps {
-        script {
-          sh "echo 'Package Stage'"
-        }
-      }
-    }
-    stage("Deploy") {
-      steps {
-        script {
-          sh "echo 'Deploy'"
-        }
+        sh 'echo ${WORKSPACE}' 
+        sh 'sed -i "3 a roles_path=${WORKSPACE}/roles" ${WORKSPACE}/deploy/ansible.cfg' 
       }
     }
     stage("Final Cleanup") {
