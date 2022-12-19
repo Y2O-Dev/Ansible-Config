@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-    ANSIBLE-CONFIG="${WORKSPACE}/deploy/ansible.cfg"
+   ANSIBLE-CONFIG="${WORKSPACE}/deploy/ansible.cfg"
   }
 
   // parameters {
@@ -20,7 +20,7 @@ pipeline {
   
     stage("SCM checkout") {
       steps {
-        git branch: 'jenkinspipeline-stages', url: 'https://github.com/Y2O-Dev/Ansible-Config.git'
+        git branch: 'jenkinspipeline-stages', url: 'https://github.com/Y2O-Dev/Ansible_Config.git'
       }
     }
 

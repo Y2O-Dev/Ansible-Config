@@ -11,11 +11,11 @@
      state: started 
      enabled: yes
 
-- name: install PHP
-  ansible.builtin.apt:
-    name:
-      - php 
-      - php-mysqlnd
-      - php-gd 
-      - php-curl
-    state: present
+# - name: install PHP
+#   ansible.builtin.apt:
+#     name:
+#       - php 
+#       - php-mysqlnd
+#       - php-gd 
+#       - php-curl
+#     state: present
