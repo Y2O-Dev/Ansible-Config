@@ -9,14 +9,14 @@
 #   tags: 
 #     - reject
 
-- name: deploy to-do application
-  import_playbook: ../static-assignments/deployment.yml
+# - name: deploy to-do application
+#   import_playbook: ../static-assignments/deployment.yml
 
 # - name: import webservers file
 #   import_playbook: ../static-assignments/uat-webservers.yml
 
-# - name: import nginx assignment
-#   import_playbook: ../static-assignments/nginx.yml
-#   tags: 
-#     - accept
+- name: import nginx assignment
+  import_playbook: ../static-assignments/nginx.yml
+  tags: 
+    - accept
 
