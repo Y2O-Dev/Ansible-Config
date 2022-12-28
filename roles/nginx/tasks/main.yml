@@ -16,7 +16,7 @@
 
 - name: Deploy static website
   become: true
-  command: echo "Welcome to Mukhtar's hub" > /var/www/html/
+  command: echo "Welcome to YAKUB's hub" > /var/www/html/
 
 - name: restart nginx
   become: true

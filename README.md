@@ -245,3 +245,6 @@ stage ('Upload Artifact to Artifactory') {
 stage ('Deploy to Dev Environment') { steps { build job: 'ansible-config/main', parameters: [[$class: 'StringParameterValue', name: 'env', value: 'dev']], propagate: false, wait: true } }
 
 } }
+
+muku jenkins syntax
+ansiblePlaybook become: true, colorized: true, credentialsId: 'Private-key', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'inventory/${inventory}', playbook: 'playbooks/site.yml'

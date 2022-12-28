@@ -21,7 +21,7 @@ pipeline {
 
     stage('SCM checkout') {
       steps {
-        git branch: 'main', url: 'https://github.com/Babbexx-22/Ansible-congif.git'
+        git branch: 'main', url: 'https://github.com/Y2O-Dev/Ansible_Config.git'
       }
     }
 
@@ -34,7 +34,7 @@ pipeline {
 
     stage ('Ansible execution in Jenkins') {
       steps {
-        ansiblePlaybook become: true, colorized: true, credentialsId: 'Private-key', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'inventory/${inventory}', playbook: 'playbooks/site.yml'
+        ansiblePlaybook become: true, colorized: true, credentialsId: 'jenkins', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/dev', playbook: 'playbooks/site.yml'
       }
     }
 
