@@ -5,8 +5,8 @@
 # 172.31.92.101 ansible_ssh_user='ec2-user'
 #172.31.89.192 ansible_ssh_user='ubuntu'
 
-[nginx]
-172.31.86.86 ansible_ssh_user='ec2-user'
+# [nginx]
+# 172.31.86.86 ansible_ssh_user='ec2-user'
 
 
 # [db:vars]
