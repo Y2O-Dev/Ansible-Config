@@ -7,7 +7,7 @@
 - name: import database file
   import_playbook: ../static-assignments/db.yml
   tags: 
-    - reject
+    - accept
 
 # - name: deploy to-do application
 #   import_playbook: ../static-assignments/deployment.yml
