@@ -4,6 +4,9 @@
 [nginx]
 172.31.86.86 ansible_ssh_user='ec2-user'
 
+[db]
+172.31.84.101 ansible_ssh_user='ubuntu'
+
 # [sonarqube]
 # <SonarQube-Private-IP-Address>
 
