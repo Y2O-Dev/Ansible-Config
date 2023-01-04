@@ -1,7 +1,8 @@
 ---
 - hosts: artifactory_server
+  become: true
   roles:
-    - role: artifactory
+    - artifactory
 
 # - hosts: artifactory_server
 #   remote_user: ubuntu
