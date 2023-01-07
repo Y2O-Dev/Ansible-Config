@@ -4,13 +4,23 @@
   hosts: todo
 
   tasks:
-    - name: install remi and rhel repo
+    - name: Install Remi repository
       ansible.builtin.yum:
-        name: 
-          - https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+        name:
+          - epel-release
           - dnf-utils
-          - http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+          - yum-utils
+          - https://rpms.remirepo.net/enterprise/remi-release-9.rpm
         disable_gpg_check: yes
+        state: present
+
+    # - name: install remi and rhel repo
+    #   ansible.builtin.yum:
+    #     name: 
+    #       - https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+    #       - dnf-utils
+    #       - http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+    #     disable_gpg_check: yes
 
     
     - name: install httpd on the webserver
