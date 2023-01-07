@@ -53,7 +53,7 @@
         url: http://35.171.6.67:8082/artifactory/y2o/php-todo
         dest: /home/ec2-user/
         url_username: admin
-        url_password: Fmca@30y  
+        url_password: AP6Bv8K7f4dN32wdiFsp5rR4eVT  
 
 
     - name: unzip the artifacts
