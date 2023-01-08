@@ -3,7 +3,7 @@
   become: true
   hosts: todo
 
-tasks:
+  tasks:
     - name: install remi and rhel repo
       ansible.builtin.yum:
         name: 
