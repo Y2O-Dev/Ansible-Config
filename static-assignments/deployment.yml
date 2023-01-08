@@ -4,35 +4,13 @@
   hosts: todo
 
   tasks:
-    # - name: Install Remi repository
-    #   ansible.builtin.yum:
-    #     name:
-    #       - epel-release
-    #       - dnf-utils
-    #       - yum-utils
-    #       - https://rpms.remirepo.net/enterprise/remi-release-9.rpm
-    #     disable_gpg_check: yes
-    #     state: present
-    
-    # - name: Install Remi repository
-    #   ansible.builtin.yum:
-      - name: Install Remi and RHEL repositories
-        ansible.builtin.yum:
-          name:
-            - epel-release
-            - dnf-utils
-            - yum-utils
-            - http://rpms.remirepo.net/enterprise/remi-release-8.rpm
-          disable_gpg_check: yes
-          state: present
-
-    # - name: install remi and rhel repo
-    #   ansible.builtin.yum:
-    #     name: 
-    #       - https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-    #       - dnf-utils
-    #       - http://rpms.remirepo.net/enterprise/remi-release-8.rpm
-    #    disable_gpg_check: yes
+    - name: install remi and rhel repo
+      ansible.builtin.yum:
+        name: 
+          - https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+          - dnf-utils
+          - http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+        disable_gpg_check: yes
 
     
     - name: install httpd on the webserver
@@ -72,10 +50,10 @@
 
     - name: Download the artifact
       get_url:
-        url: http://35.171.6.67:8082/artifactory/y2o/php-todo
+        url: http://3.125.156.235:8082/artifactory/PBL/php-todo
         dest: /home/ec2-user/
         url_username: admin
-        url_password: AP6Bv8K7f4dN32wdiFsp5rR4eVT  
+        url_password: APBKm4qXoDaoE4pTfHAD6iPnJMh  
 
 
     - name: unzip the artifacts
