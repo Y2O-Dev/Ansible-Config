@@ -50,10 +50,10 @@
 
     - name: Download the artifact
       get_url:
-        url: http://44.203.236.132:8082/artifactory/bakare/
+        url: http://35.171.6.67:8082/artifactory/y2o/php-todo
         dest: /home/ec2-user/
         url_username: admin
-        url_password: AP4ZqkJ3bc8uoKPGSrrGq6Ys1vW  
+        url_password: AP6Bv8K7f4dN32wdiFsp5rR4eVT  
 
 
     - name: unzip the artifacts
