@@ -9,8 +9,8 @@
 #   tags: 
 #     - accept
 
-- name: deploy to-do application
-  import_playbook: ../static-assignments/deployment.yml
+# - name: deploy to-do application
+#   import_playbook: ../static-assignments/deployment.yml
 
 # - name: import webservers file
 #   import_playbook: ../static-assignments/uat-webservers.yml
@@ -20,3 +20,7 @@
 #   tags: 
 #     - accept
 
+- hosts: sonarq
+- name: install sonarqube
+  become: true
+  import_playbook: ../static-assignments/sonar.yml
