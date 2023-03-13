@@ -17,5 +17,3 @@
 
 - name: import nginx role
   import_playbook: ../static-assignments/nginx.yml
-
-

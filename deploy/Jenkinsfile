@@ -4,13 +4,11 @@ pipeline {
     environment {
       ANSIBLE_CONFIG="${WORKSPACE}/deploy/ansible.cfg"
     }
-  // parameters {
-  //     string(name: 'inventory', defaultValue: 'dev',  description: 'This is the inventory file for the environment to deploy configuration')
-  //   }
 
-  stages {
-    stage ("Initial Workspace Clean-up") {
-      steps {
+    stages {
+    
+     stage ("Initial Workspace Clean-up") {
+       steps {
         dir("${WORKSPACE}") {
           deleteDir()
         }
@@ -19,16 +17,16 @@ pipeline {
   
     stage("SCM checkout") {
       steps {
-        git branch: 'jenkinspipeline-stages', url: 'https://github.com/Y2O-Dev/Ansible_Config.git'
+        git branch: 'test', url: 'https://github.com/Y2O-Dev/Ansible_Config.git'
       }
     }
 
-    stage ('Update roles_path using sed') {
-      steps {
-        sh 'echo ${WORKSPACE}' 
-        sh 'sed -i "3 a roles_path=${WORKSPACE}/roles" ${WORKSPACE}/deploy/ansible.cfg' 
-      }
-    }
+    // stage ('Update roles_path using sed') {
+    //   steps {
+    //     sh 'echo ${WORKSPACE}' 
+    //     sh 'sed -i "3 a roles_path=${WORKSPACE}/roles" ${WORKSPACE}/deploy/ansible.cfg' 
+    //   }
+    // }
 
     stage ("Run ansible playbook") {
       steps {
